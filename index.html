@@ -4,18 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="index.css" />
     <script defer src="clock.js"></script>
-    <script defer src="greeting.js"></script>
+    <script defer src="greetings.js"></script>
+    <script defer src="toDoList.js"></script>
+    <script defer src="bg.js"></script>
+    <script defer src="weather.js"></script>
   </head>
   <body>
-    <div class="js-clock">
-      <h1>00:00:00</h1>
+    <!-- LOGO -->
+    <div class="logo">
+      <img
+        src="imgs/Momentum_Logo.png"
+        alt="Momentum_Logo"
+        width="50px"
+        height="50px"
+      />
     </div>
-    <form class="js-form form_askname">
-      <input type="text" placeholder="What is your name?" />
-    </form>
-    <h4 class="js-greetings greetings">Greetings!</h4>
+    <div class="main">
+      <!-- CLOCK -->
+      <div class="js-clock clock">
+        <h1>00:00:00</h1>
+      </div>
+      <!-- GREETINGS -->
+      <form class="js-formAskName form_askname">
+        <input type="text" placeholder="What is your name?" />
+      </form>
+      <h2 class="js-greetings greetings">Greetings!</h2>
+      <!-- TO DO LIST -->
+      <form class="js-formToDoList">
+        <input type="text" placeholder="Type task!" />
+      </form>
+      <ul class="js-ulToDoList toDoList"></ul>
+    </div>
+    <!-- WEATHER -->
+    <div class="weather_wrap">
+      <h3 class="js-weather weather"></h3>
+    </div>
   </body>
 </html>

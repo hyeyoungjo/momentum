@@ -1,3 +1,119 @@
+:root {
+  /* COLOR */
+  --color-dark-green: rgb(8, 26, 8);
+  --color-white: rgb(236, 250, 225);
+  /* FONT SIZE */
+  --font-large: 150px;
+  --font-medium: 45px;
+  --font-regular: 25px;
+  --font-small: 16px;
+}
+
+body {
+  background-color: var(--color-dark-green);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+h1 {
+  font-size: var(--font-large);
+}
+
+h2 {
+  font-size: var(--font-medium);
+}
+
+h3 {
+  font-size: var(--font-regular);
+}
+
+.main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  width: 600px;
+  /* background: blue; */
+  text-align: left;
+  text-indent: 25px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+.clock h1 {
+  transform: translate(0px, 10px);
+  opacity: 0.7;
+  line-height: 40px;
+}
+
+form input {
+  width: 400px;
+  height: 30px;
+  background-color: var(--color-dark-green);
+  border: solid 1px var(--color-white);
+  text-indent: 20px;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.toDoList {
+  width: 300px;
+  text-align: left;
+  position: relative;
+  left: 120px;
+}
+
+.toDoList li {
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-indent: 5px;
+  background-color: var(--color-dark-green);
+}
+
+.toDoList li:last-child {
+  margin-bottom: 0px;
+}
+
+.toDoList button {
+  background: none;
+  border: none;
+  cursor: grab;
+  width: 30px;
+  height: 30px;
+  font-size: var(--font-small);
+  color: var(--color-white);
+}
+
+.weather_wrap {
+  width: 200px;
+  height: 120px;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+.weather {
+  text-align: right;
+  font-size: var(--font-medium);
+  line-height: 50px;
+  position: absolute;
+  top: -30px;
+  right: 10px;
+}
+
+/* JS RELATED */
+
 .form_askname {
   display: none;
 }
@@ -8,4 +124,22 @@
 
 .reveal {
   display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -100;
+  width: 100%;
+  animation: fadeIn 0.5s linear;
 }
