@@ -21,7 +21,7 @@ function getWeather(lat, lon) {
   //2. and then get response data
   //3. and then get json data only
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
   )
     .then(function (response) {
       return response.json();
