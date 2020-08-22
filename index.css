@@ -4,15 +4,26 @@
   --color-white: rgb(236, 250, 225);
   /* FONT SIZE */
   --font-large: 150px;
-  --font-medium: 45px;
+  --font-medium: 40px;
   --font-regular: 25px;
   --font-small: 16px;
+  /* SIZE */
+  --main-width: 625px;
+  --task-column1: 310px;
+  --task-column2: 610px;
+  --task-width: 300px;
 }
 
 body {
   background-color: var(--color-dark-green);
   color: var(--color-white);
   text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  font-size: var(--font-small);
 }
 
 .logo {
@@ -36,15 +47,15 @@ h3 {
 }
 
 .main {
+  width: var(--main-width);
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 150px;
+  transform: translateX(-50%);
 }
 
 .clock {
   width: 600px;
-  /* background: blue; */
   text-align: left;
   text-indent: 25px;
   position: relative;
@@ -67,26 +78,46 @@ form input {
   color: var(--color-white);
 }
 
-.toDoList {
-  width: 300px;
-  text-align: left;
-  position: relative;
-  left: 120px;
+.toDoList_wrap {
+  opacity: 0;
+  transition: opacity 1s linear;
 }
 
-.toDoList li {
-  width: 300px;
+.ulToDoList {
+  width: var(--task-column1);
+  height: 190px;
+  position: absolute;
+  left: 50%;
+  top: 380px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.columnTwo {
+  width: var(--task-column2);
+}
+
+.ulToDoList li {
+  text-align: left;
+  width: var(--task-width);
+  height: 30px;
   margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 0px;
   border-radius: 20px;
   text-indent: 5px;
   background-color: var(--color-dark-green);
+  position: relative;
+  left: -20px;
 }
 
-.toDoList li:last-child {
+.ulToDoList li:nth-child(5n) {
   margin-bottom: 0px;
 }
 
-.toDoList button {
+.ulToDoList button {
   background: none;
   border: none;
   cursor: grab;
@@ -100,8 +131,8 @@ form input {
   width: 200px;
   height: 120px;
   position: absolute;
-  right: 40px;
-  top: 30px;
+  right: 30px;
+  top: 20px;
 }
 .weather {
   text-align: right;
@@ -124,6 +155,7 @@ form input {
 
 .reveal {
   display: block;
+  opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -137,9 +169,33 @@ form input {
 
 .bgImg {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
   z-index: -100;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   animation: fadeIn 0.5s linear;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  :root {
+    /* FONT SIZE */
+    --font-large: 100px;
+    --font-medium: 35px;
+    --font-regular: 20px;
+    --font-small: 13px;
+    /* SIZE */
+    --main-width: 445px;
+    --task-column1: 210px;
+    --task-column2: 410px;
+    --task-width: 200px;
+  }
+  .ulToDoList {
+    top: 300px;
+  }
 }

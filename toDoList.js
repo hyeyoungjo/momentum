@@ -19,15 +19,12 @@ const delBtn_CHECKED = "fas fa-check-circle";
 
 function deleteTask(event) {
   //delete from html
-  console.log(event.target);
   const selectedIcon = event.target;
   const selectedBtn = event.target.parentNode;
   const selectedLi = selectedBtn.parentNode;
-  console.log(event.target);
   selectedBtn.querySelector("i").classList.remove();
   selectedBtn.querySelector("i").className = delBtn_CHECKED;
   window.setTimeout(function () {
-    console.log("selectedLi", selectedLi);
     ulToDoList.removeChild(selectedLi);
   }, 500);
 
@@ -37,6 +34,13 @@ function deleteTask(event) {
   });
   arrToDos = cleanToDos;
   saveToDos();
+  //if tasks are less than 6, delete column two
+  if (arrToDos.length === 5) {
+    console.log("sss");
+    window.setTimeout(function () {
+      ulToDoList.classList.remove("columnTwo");
+    }, 600);
+  }
 }
 
 function saveToDos() {
@@ -47,11 +51,20 @@ function saveToDos() {
 
 function paintTask(txt) {
   // create li, delBtn, span, (li id)
+  const newId = arrToDos.length + 1;
+  //if tasks are more than 10, don't take more
+  if (newId > 10) {
+    console.log("you have reached to maximum li");
+    const username = localStorage.getItem(LS_USERNAME); //from greeting.js
+    inputTask.placeholder = `10 is maximum 😐. Don't forget to rest, ${username} 😧!`;
+    return;
+  } else {
+    inputTask.placeholder = "Type task!";
+  }
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   const checkIcon = document.createElement("i");
   const span = document.createElement("span");
-  const newId = arrToDos.length + 1;
   checkIcon.className = delBtn_UNCHECKED;
   delBtn.appendChild(checkIcon);
   span.innerText = txt;
@@ -71,6 +84,10 @@ function paintTask(txt) {
   arrToDos.push(objToDo);
   //save to local storage
   saveToDos();
+  //if tasks are more than 5, make column two
+  if (li.id > 5) {
+    ulToDoList.classList.add("columnTwo");
+  }
 }
 
 function handleSubmit() {
