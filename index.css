@@ -6,7 +6,7 @@
   /* FONT SIZE */
   --font-large: 150px;
   --font-medium: 40px;
-  --font-regular: 20px;
+  --font-regular: 26px;
   --font-small: 16px;
   /* SIZE */
   --main-width: 625px;
@@ -28,8 +28,9 @@ body {
   background-color: var(--color-dark-green);
   color: var(--color-white);
   text-align: center;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* width: 1200px; */
   position: relative;
   left: 0px;
   top: 0px;
@@ -159,8 +160,8 @@ form.toDoList input {
 }
 .weather {
   text-align: right;
-  font-size: var(--font-medium);
-  line-height: 50px;
+  font-size: var(--font-regular);
+  line-height: 35px;
   position: absolute;
   top: -30px;
   right: 10px;
@@ -192,12 +193,17 @@ form.toDoList input {
 
 .bgImg {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  top: 0px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
+  transform: translate(-50%, -20px);
   z-index: -100;
-  min-height: 100%;
+  object-fit: cover;
+  /* min-height: 100%; */
+  /* width: auto; */
+  overflow: hidden;
   animation: fadeIn 0.5s linear;
 }
 
@@ -205,17 +211,26 @@ form.toDoList input {
 @media screen and (max-width: 768px) {
   :root {
     /* FONT SIZE */
-    --font-large: 100px;
+    --font-large: 90px;
     --font-medium: 35px;
     --font-regular: 20px;
     --font-small: 12px;
     /* SIZE */
     --main-width: 445px;
-    --task-column1: 210px;
-    --task-column2: 410px;
-    --task-width: 200px;
+    --task-column1: 190px;
+    --task-column2: 370px;
+    --task-width: 180px;
+  }
+  form input {
+    width: 300px;
+  }
+  .clock {
+    text-indent: 50px;
   }
   .ulToDoList {
     top: 300px;
+  }
+  .weather {
+    line-height: 27px;
   }
 }
