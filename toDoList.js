@@ -56,7 +56,7 @@ function paintTask(txt) {
   if (newId > 10) {
     console.log("you have reached to maximum li");
     const username = localStorage.getItem(LS_USERNAME); //from greeting.js
-    inputTask.placeholder = `Ten is maximum 😐. Don't forget to rest, ${username} 😧!`;
+    inputTask.placeholder = `Ten is maximum 😐.  Don't forget to rest ${username} 😧!`;
     return;
   } else {
     inputTask.placeholder = "Type task!";

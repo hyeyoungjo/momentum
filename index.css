@@ -83,8 +83,10 @@ h3 {
 form input {
   width: 400px;
   height: 30px;
-  background-color: var(--color-dark-green-trans);
-  border: solid 1px var(--color-white);
+  background: none;
+  appearance: none;
+  border: 0;
+  border-bottom: solid 1px var(--color-white);
   text-indent: 20px;
   margin-bottom: 20px;
   color: var(--color-white);
@@ -93,6 +95,16 @@ form input {
 form input::placeholder {
   color: white;
   opacity: 0.7;
+  text-align: center;
+}
+
+input:focus,
+input:active {
+  outline: none;
+}
+
+form.form_askname input {
+  text-align: center;
 }
 
 .toDoList_wrap {
@@ -103,7 +115,10 @@ form input::placeholder {
 
 form.toDoList input {
   font-family: "Hi Melody";
-  font-size: var(--font-regular);
+  border: solid 1px var(--color-white);
+  background-color: var(--color-dark-green-trans);
+  font-size: var(--font-small);
+  border-radius: 5px;
 }
 
 .ulToDoList {
